@@ -5,6 +5,8 @@ import 'package:taxi_app/resources/home_page.dart';
 import 'package:taxi_app/resources/loading_dialog.dart';
 import 'package:taxi_app/resources/msg_dilog.dart';
 import 'package:taxi_app/resources/register_page.dart';
+import 'package:taxi_app/utils/screen/screen_utils.dart';
+import 'package:taxi_app/widget/global.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -17,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, height: 667, width: 375, allowFontScaling: true);
     return Scaffold(
       body: Container(
         padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
@@ -28,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: 140,
               ),
-              Image.asset('image/ic_car_green.png'),
+              Image.asset(getAssetsImage("ic_car_green.png")),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 6),
                 child: Text(
@@ -48,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: InputDecoration(
                       labelText: "Email",
                       prefixIcon: Container(
-                          width: 50, child: Image.asset("image/ic_mail.png")),
+                          width: 50, child: Image.asset(getAssetsImage("ic_mail.png"))),
                       border: OutlineInputBorder(
                           borderSide:
                           BorderSide(color: Color(0xffCED0D2), width: 1),
@@ -62,7 +65,8 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                     labelText: "Password",
                     prefixIcon: Container(
-                        width: 50, child: Image.asset("image/ic_phone.png")),
+                        width: 50, child:
+                    Image.asset(getAssetsImage("ic_phone.png"))),
                     border: OutlineInputBorder(
                         borderSide:
                         BorderSide(color: Color(0xffCED0D2), width: 1),

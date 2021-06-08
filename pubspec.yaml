@@ -23,21 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_auth:
-  firebase_database:
-  google_maps_flutter:
-#    path: ../google_maps_flutter
-  http: 0.12.0+1
-  firebase_core : ^0.5.0
-  progress_dialog: ^1.2.4
-  cached_network_image: ^2.2.0+1
-  multi_image_picker: ^4.6.7
-  flutter_speed_dial: ^1.2.5
-  flutter_rating_bar: ^3.2.0
-  heic_to_jpg: ^0.1.2
-  date_range_picker:
-    git:
-      url: https://github.com/LempereurBenjamin/date_range_pickerz
+
 
 
 
@@ -45,6 +31,22 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+  firebase_auth:
+  firebase_database:
+  google_maps_flutter:
+  #    path: ../google_maps_flutter
+  http: any
+  firebase_core: any
+  progress_dialog: any
+  cached_network_image: any
+  multi_image_picker: any
+  flutter_speed_dial: any
+  flutter_rating_bar: any
+  heic_to_jpg: any
+  intl: any
+  date_range_picker:
+#    git:
+#      url: https://github.com/LempereurBenjamin/date_range_pickerz
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +65,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/image/
+    - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

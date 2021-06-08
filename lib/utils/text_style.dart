@@ -1,5 +1,6 @@
-import 'package:timesoft/widget/global.dart';
+
 import 'package:flutter/material.dart';
+import 'package:taxi_app/widget/global.dart';
 import 'color_utils.dart';
 
 class TextStyles {

@@ -1,4 +1,5 @@
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:taxi_app/utils/color_utils.dart';
 import 'package:taxi_app/utils/font_utils.dart';
@@ -21,7 +22,7 @@ Widget circleAvatar(String path,{String replaceName="",double radius = 22}) {
           width: radius*2,
           height: radius*2,
         ),
-        imageUrl:  ApiConstants.shared.getFullImage(path),
+        // imageUrl:  ApiConstants.shared.getFullImage(path),
       )
   );
 }
