@@ -11,8 +11,13 @@ void main() async {
     new AuthBloc(),
     MaterialApp(
       debugShowCheckedModeBanner: false,
+      builder: (BuildContext context, Widget child) {
+        final data = MediaQuery.of(context).copyWith(textScaleFactor: 1.0);
+        return MediaQuery(data: data, child: child);
+      },
       home: LoginPage(),
-    )));
+    ))
+  );
 }
 
 

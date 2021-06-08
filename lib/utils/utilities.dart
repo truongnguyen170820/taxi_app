@@ -3,18 +3,9 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:flutter_image_compress/flutter_image_compress.dart';
-import 'package:taxi_app/utils/color_utils.dart';
-import 'package:taxi_app/utils/font_utils.dart';
-import 'package:taxi_app/widget/global.dart';
-import 'package:timesoft/model/common/date_ranger_filter.dart';
-import 'package:timesoft/utils/color_utils.dart';
-import 'package:timesoft/utils/font_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:progress_dialog/progress_dialog.dart';
-import 'package:timesoft/widget/global.dart';
 
 class Utilities {
   static String formatNumber(dynamic number, {String format = "#,###"}) {
@@ -54,56 +45,56 @@ class Utilities {
     return first.substring(0, 1) + last.substring(0, 1);
   }
 
-  static showToast(BuildContext context, String mess,
-      {Color textColor = Colors.white}) {
-    FlutterToast(context).showToast(
-      child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25.0),
-            color: ColorUtils.BLACK_BACKGROUND,
-          ),
-          child: Text(
-            mess,
-            style: FontUtils.NORMAL.copyWith(color: textColor),
-          )),
-      gravity: ToastGravity.BOTTOM,
-      toastDuration: Duration(seconds: 1),
-    );
-  }
+  // static showToast(BuildContext context, String mess,
+  //     {Color textColor = Colors.white}) {
+  //   FlutterToast(context).showToast(
+  //     child: Container(
+  //         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+  //         decoration: BoxDecoration(
+  //           borderRadius: BorderRadius.circular(25.0),
+  //           color: ColorUtils.BLACK_BACKGROUND,
+  //         ),
+  //         child: Text(
+  //           mess,
+  //           style: FontUtils.NORMAL.copyWith(color: textColor),
+  //         )),
+  //     gravity: ToastGravity.BOTTOM,
+  //     toastDuration: Duration(seconds: 1),
+  //   );
+  // }
 
-  static showToast1(BuildContext context, String mess, {Color textColor = Colors.white, String mess1}) {
-    FlutterToast(context).showToast(
-      child: Container(
-        padding: EdgeInsets.only(right: setWidth(24), left: setWidth(24)),
-        height: setHeight(293),
-        width: setWidth(311),
-        decoration: BoxDecoration(
-            color: ColorUtils.gray4,
-            borderRadius: BorderRadius.circular(32)
-        ),
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(radius: 45,
-              backgroundColor: ColorUtils.blueAccent,
-              child: Icon(
-                Icons.check, size: setSp(45), color: ColorUtils.WHITE,),
-            ),
-            SizedBox(height: setHeight(20)),
-            Text(mess, style: FontUtils.NORMAL.copyWith(
-                color: ColorUtils.blueAccent, fontSize: setSp(16)),),
-            SizedBox(height: setHeight(13)),
-            Text(mess1, style: FontUtils.NORMAL.copyWith(
-                color: ColorUtils.YELLOW_TEXT, fontSize: setSp(12)),textAlign: TextAlign.center,)
-          ],
-        ),
-      ),
-      gravity: ToastGravity.CENTER,
-      toastDuration: Duration(seconds: 2),
-    );
-  }
+  // static showToast1(BuildContext context, String mess, {Color textColor = Colors.white, String mess1}) {
+  //   FlutterToast(context).showToast(
+  //     child: Container(
+  //       padding: EdgeInsets.only(right: setWidth(24), left: setWidth(24)),
+  //       height: setHeight(293),
+  //       width: setWidth(311),
+  //       decoration: BoxDecoration(
+  //           color: ColorUtils.gray4,
+  //           borderRadius: BorderRadius.circular(32)
+  //       ),
+  //       child: Column(
+  //         // crossAxisAlignment: CrossAxisAlignment.start,
+  //         mainAxisAlignment: MainAxisAlignment.center,
+  //         children: [
+  //           CircleAvatar(radius: 45,
+  //             backgroundColor: ColorUtils.blueAccent,
+  //             child: Icon(
+  //               Icons.check, size: setSp(45), color: ColorUtils.WHITE,),
+  //           ),
+  //           SizedBox(height: setHeight(20)),
+  //           Text(mess, style: FontUtils.NORMAL.copyWith(
+  //               color: ColorUtils.blueAccent, fontSize: setSp(16)),),
+  //           SizedBox(height: setHeight(13)),
+  //           Text(mess1, style: FontUtils.NORMAL.copyWith(
+  //               color: ColorUtils.YELLOW_TEXT, fontSize: setSp(12)),textAlign: TextAlign.center,)
+  //         ],
+  //       ),
+  //     ),
+  //     // gravity: ToastGravity.CENTER,
+  //     toastDuration: Duration(seconds: 2),
+  //   );
+  // }
 
   static String getSubstring(String text, int number, {String replace = ""}) {
     if (text == null) return replace??"";
@@ -192,17 +183,17 @@ class Utilities {
   //     ),
   //   ),gravity: ToastGravity.CENTER);
   // }
-  static Future<Uint8List> compress(String path, int quanlity) async {
-    Uint8List result;
-    try {
-      result = await FlutterImageCompress.compressWithFile(path,
-          quality: quanlity, keepExif: false);
-      print("Compress ${path} size after compress ${result.length}");
-    } on Exception catch (e) {
-      print(e);
-    }
-    return result;
-  }
+  // static Future<Uint8List> compress(String path, int quanlity) async {
+  //   Uint8List result;
+  //   try {
+  //     result = await FlutterImageCompress.compressWithFile(path,
+  //         quality: quanlity, keepExif: false);
+  //     print("Compress ${path} size after compress ${result.length}");
+  //   } on Exception catch (e) {
+  //     print(e);
+  //   }
+  //   return result;
+  // }
   static getQuantity(String path) async {
     var file = File(path);
     if (file != null) {
@@ -258,61 +249,61 @@ class Utilities {
     return dialog;
   }
 
-  static List<DateRangerModel> getListFilteredDate() {
-    var result = List<DateRangerModel>();
-    var currentDay = DateTime.now();
-    result.add(DateRangerModel(
-        "Hôm nay",
-        DateTime(currentDay.year, currentDay.month, currentDay.day),
-        DateTime(currentDay.year, currentDay.month, currentDay.day),
-        0));
-    var pastDay = currentDay.subtract(Duration(days: 1));
-    result.add(DateRangerModel(
-        "Hôm qua",
-        DateTime(pastDay.year, pastDay.month, pastDay.day),
-        DateTime(pastDay.year, pastDay.month, pastDay.day),
-        1));
-    pastDay = currentDay.subtract(Duration(days: currentDay.weekday - 1));
-    var recentDay = currentDay.add(Duration(days: 7 - currentDay.weekday));
-    result.add(DateRangerModel(
-        "Tuần này",
-        DateTime(pastDay.year, pastDay.month, pastDay.day),
-        DateTime(recentDay.year, recentDay.month, recentDay.day),
-        2));
-
-    pastDay = currentDay.subtract(Duration(days: currentDay.weekday + 6));
-    recentDay = currentDay.subtract(Duration(days: currentDay.weekday));
-    result.add(DateRangerModel(
-        "Tuần trước",
-        DateTime(pastDay.year, pastDay.month, pastDay.day),
-        DateTime(recentDay.year, recentDay.month, recentDay.day),
-        3));
-
-    pastDay = currentDay.subtract(Duration(days: currentDay.day - 1));
-    recentDay = DateTime(pastDay.year, pastDay.month + 1, 1)
-        .subtract(Duration(days: 1));
-    result.add(DateRangerModel(
-        "Tháng này",
-        DateTime(pastDay.year, pastDay.month, pastDay.day),
-        DateTime(recentDay.year, recentDay.month, recentDay.day),
-        4));
-
-    pastDay = DateTime(currentDay.year, currentDay.month - 1, 1);
-    recentDay = DateTime(pastDay.year, pastDay.month + 1, 1)
-        .subtract(Duration(days: 1));
-    result.add(DateRangerModel(
-        "Tháng trước",
-        DateTime(pastDay.year, pastDay.month, pastDay.day),
-        DateTime(pastDay.year, pastDay.month+1, 0),
-        5));
-    pastDay = currentDay.subtract(Duration(days: 1));
-    result.add(DateRangerModel(
-        "Tùy chọn",
-        DateTime(pastDay.year, pastDay.month, pastDay.day),
-        DateTime(currentDay.year, currentDay.month, currentDay.day),
-        6));
-    return result;
-  }
+  // static List<DateRangerModel> getListFilteredDate() {
+  //   var result = List<DateRangerModel>();
+  //   var currentDay = DateTime.now();
+  //   result.add(DateRangerModel(
+  //       "Hôm nay",
+  //       DateTime(currentDay.year, currentDay.month, currentDay.day),
+  //       DateTime(currentDay.year, currentDay.month, currentDay.day),
+  //       0));
+  //   var pastDay = currentDay.subtract(Duration(days: 1));
+  //   result.add(DateRangerModel(
+  //       "Hôm qua",
+  //       DateTime(pastDay.year, pastDay.month, pastDay.day),
+  //       DateTime(pastDay.year, pastDay.month, pastDay.day),
+  //       1));
+  //   pastDay = currentDay.subtract(Duration(days: currentDay.weekday - 1));
+  //   var recentDay = currentDay.add(Duration(days: 7 - currentDay.weekday));
+  //   result.add(DateRangerModel(
+  //       "Tuần này",
+  //       DateTime(pastDay.year, pastDay.month, pastDay.day),
+  //       DateTime(recentDay.year, recentDay.month, recentDay.day),
+  //       2));
+  //
+  //   pastDay = currentDay.subtract(Duration(days: currentDay.weekday + 6));
+  //   recentDay = currentDay.subtract(Duration(days: currentDay.weekday));
+  //   result.add(DateRangerModel(
+  //       "Tuần trước",
+  //       DateTime(pastDay.year, pastDay.month, pastDay.day),
+  //       DateTime(recentDay.year, recentDay.month, recentDay.day),
+  //       3));
+  //
+  //   pastDay = currentDay.subtract(Duration(days: currentDay.day - 1));
+  //   recentDay = DateTime(pastDay.year, pastDay.month + 1, 1)
+  //       .subtract(Duration(days: 1));
+  //   result.add(DateRangerModel(
+  //       "Tháng này",
+  //       DateTime(pastDay.year, pastDay.month, pastDay.day),
+  //       DateTime(recentDay.year, recentDay.month, recentDay.day),
+  //       4));
+  //
+  //   pastDay = DateTime(currentDay.year, currentDay.month - 1, 1);
+  //   recentDay = DateTime(pastDay.year, pastDay.month + 1, 1)
+  //       .subtract(Duration(days: 1));
+  //   result.add(DateRangerModel(
+  //       "Tháng trước",
+  //       DateTime(pastDay.year, pastDay.month, pastDay.day),
+  //       DateTime(pastDay.year, pastDay.month+1, 0),
+  //       5));
+  //   pastDay = currentDay.subtract(Duration(days: 1));
+  //   result.add(DateRangerModel(
+  //       "Tùy chọn",
+  //       DateTime(pastDay.year, pastDay.month, pastDay.day),
+  //       DateTime(currentDay.year, currentDay.month, currentDay.day),
+  //       6));
+  //   return result;
+  // }
 
   static String getUsageType(int type) {
     switch (type) {

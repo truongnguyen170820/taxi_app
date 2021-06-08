@@ -1,5 +1,7 @@
-import 'package:timesoft/utils/color_utils.dart';
+// import 'package:timesoft/utils/color_utils.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'color_utils.dart';
 
 class FontUtils {
   static final NORMAL = TextStyle(

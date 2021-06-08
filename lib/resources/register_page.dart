@@ -6,6 +6,7 @@ import 'package:taxi_app/resources/home_page.dart';
 import 'package:taxi_app/resources/loading_dialog.dart';
 import 'package:taxi_app/resources/login_page.dart';
 import 'package:taxi_app/resources/msg_dilog.dart';
+import 'package:taxi_app/widget/global.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -62,7 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           snapshot.hasError ? snapshot.error : null,
                           labelText: "Name",
                           prefixIcon: Container(
-                              width: 50, child: Image.asset("image/ic_user.png")),
+                              width: 50, child: Image.asset(getAssetsImage("ic_user.png"))),
                           border: OutlineInputBorder(
                               borderSide: BorderSide(
                                   color: Color(0xffCED0D2), width: 1),
@@ -80,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         errorText:
                         snapshot.hasError ? snapshot.error : null,
                         prefixIcon: Container(
-                            width: 50, child: Image.asset("image/ic_phone.png")),
+                            width: 50, child: Image.asset(getAssetsImage("ic_phone.png"))),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color(0xffCED0D2), width: 1),
@@ -100,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           errorText:
                           snapshot.hasError ? snapshot.error : null,
                           prefixIcon: Container(
-                              width: 50, child: Image.asset("image/ic_mail.png")),
+                              width: 50, child: Image.asset(getAssetsImage("ic_mail.png"))),
                           border: OutlineInputBorder(
                               borderSide: BorderSide(
                                   color: Color(0xffCED0D2), width: 1),
@@ -119,7 +120,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         snapshot.hasError ? snapshot.error : null,
                         labelText: "Password",
                         prefixIcon: Container(
-                            width: 50, child: Image.asset("image/ic_lock.png")),
+                            width: 50, child: Image.asset(getAssetsImage("ic_lock.png"))),
                         border: OutlineInputBorder(
                             borderSide: BorderSide(
                                 color: Color(0xffCED0D2), width: 1),
