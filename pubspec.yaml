@@ -33,8 +33,12 @@ dependencies:
   cupertino_icons: ^1.0.0
   firebase_auth:
   firebase_database:
-  google_maps_flutter:
-  #    path: ../google_maps_flutter
+  google_maps_flutter: any
+#    git:
+#      url: git://github.com/flutter/plugins
+#      path: ../google_maps_flutter
+#    0.4.0
+#      path: ../google_maps_flutter
   http: any
   firebase_core: any
   progress_dialog: any
@@ -45,6 +49,8 @@ dependencies:
   heic_to_jpg: any
   intl: any
   date_range_picker:
+  flutter_secure_storage: ^3.3.3
+  shared_preferences: ^0.5.8
 #    git:
 #      url: https://github.com/LempereurBenjamin/date_range_pickerz
 
